@@ -7,18 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-main: #0F172A;
-    --bg-card: #1E293B;
-    --bg-card-hover: #334155;
-    --accent-blue: #2563EB;
+    --bg-main: #0B0F19;
+    --bg-card: #151D2A;
+    --bg-card-hover: #1E293B;
+    --accent-blue: #3B82F6;
     --accent-cyan: #06B6D4;
     --accent-teal: #10B981;
     --accent-amber: #F59E0B;
     --accent-rose: #EF4444;
     --text-primary: #F8FAFC;
     --text-secondary: #94A3B8;
-    --border-color: #334155;
-    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    --border-color: #243044;
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
   }
 
   * {
@@ -39,10 +39,10 @@
 
   /* Header Navbar */
   header {
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(11, 15, 25, 0.95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
-    padding: 12px 30px;
+    padding: 14px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,22 +58,23 @@
   }
 
   .brand-logo {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
     color: white;
     font-size: 14px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   }
 
   .brand-title {
     font-size: 15px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
   }
 
   .brand-subtitle {
@@ -84,16 +85,18 @@
   nav.slide-tabs {
     display: flex;
     gap: 6px;
-    overflow-x: auto;
-    padding-bottom: 2px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
   }
 
   .tab-btn {
     background: transparent;
-    border: 1px solid transparent;
+    border: none;
     color: var(--text-secondary);
-    padding: 6px 12px;
-    border-radius: 6px;
+    padding: 6px 14px;
+    border-radius: 7px;
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
@@ -103,46 +106,45 @@
 
   .tab-btn:hover {
     color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05);
   }
 
   .tab-btn.active {
     background: var(--accent-blue);
     color: white;
-    border-color: var(--accent-cyan);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
   }
 
-  /* Main Deck Container (16:9 Aspect Ratio Focus) */
+  /* Main Presentation Container */
   main {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 24px;
   }
 
   .deck-container {
     width: 100%;
-    max-width: 1280px;
-    aspect-ratio: 16 / 9;
-    background-color: #0B1120;
-    border-radius: 16px;
+    max-width: 1160px;
+    min-height: 620px;
+    background-color: #0E1422;
+    border-radius: 20px;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 36px 44px;
+    position: relative;
   }
 
   .slide {
     display: none;
-    width: 100%;
-    height: 100%;
-    padding: 36px 48px;
-    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
+    min-height: 520px;
+    animation: fadeIn 0.35s ease-out;
   }
 
   .slide.active {
@@ -150,18 +152,18 @@
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.98); }
-    to { opacity: 1; transform: scale(1); }
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Slide Typography & Layouts */
+  /* Slide Top Bar */
   .slide-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 14px;
-    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
   }
 
   .slide-tag {
@@ -170,53 +172,49 @@
     font-weight: 700;
     color: var(--accent-cyan);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     margin-bottom: 4px;
   }
 
   .slide-title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
     color: var(--text-primary);
-  }
-
-  .slide-subtitle {
-    font-size: 13px;
-    color: var(--text-secondary);
+    line-height: 1.3;
   }
 
   .badge-nda {
     background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.3);
+    border: 1px solid rgba(16, 185, 129, 0.25);
     color: var(--accent-teal);
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 20px;
   }
 
   .slide-body {
     flex: 1;
     display: flex;
-    gap: 24px;
-    overflow-y: auto;
+    align-items: center;
   }
 
   .slide-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 12px;
-    margin-top: 16px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+    margin-top: 24px;
     font-size: 11px;
     color: var(--text-secondary);
+    font-weight: 500;
   }
 
-  /* Profile Layout with Photo Frame */
+  /* Profile Slide Layout */
   .profile-grid {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 240px 1fr;
     gap: 32px;
     width: 100%;
     align-items: center;
@@ -226,7 +224,7 @@
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 20px;
+    padding: 24px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -234,13 +232,13 @@
   }
 
   .photo-frame {
-    width: 180px;
-    height: 180px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    border: 4px solid var(--accent-blue);
-    padding: 4px;
+    border: 3px solid var(--accent-blue);
+    padding: 3px;
     background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     position: relative;
     overflow: hidden;
   }
@@ -253,97 +251,97 @@
   }
 
   .photo-upload-btn {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--accent-cyan);
     background: rgba(6, 182, 212, 0.1);
-    border: 1px dashed var(--accent-cyan);
-    padding: 4px 8px;
-    border-radius: 4px;
+    border: 1px dashed rgba(6, 182, 212, 0.4);
+    padding: 5px 10px;
+    border-radius: 6px;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 10px;
+    transition: all 0.2s ease;
   }
 
-  /* Grid Cards & Tables */
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    width: 100%;
+  .photo-upload-btn:hover {
+    background: rgba(6, 182, 212, 0.2);
   }
 
-  .grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    width: 100%;
-  }
+  /* Grid Layouts */
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; width: 100%; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; width: 100%; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; width: 100%; }
 
   .card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border-radius: 14px;
+    padding: 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(59, 130, 246, 0.5);
   }
 
   .card-val {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 800;
     color: var(--text-primary);
-    margin: 8px 0;
+    margin: 6px 0;
   }
 
   .card-label {
     font-size: 11px;
     color: var(--text-secondary);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
   }
 
-  /* Table Custom */
+  /* Custom Clean Table */
   table.custom-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 12px;
+    font-size: 13px;
     background: var(--bg-card);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
+    border: 1px solid var(--border-color);
   }
 
   table.custom-table th {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     color: var(--accent-cyan);
     font-weight: 700;
     text-align: left;
-    padding: 10px 14px;
+    padding: 12px 18px;
     border-bottom: 1px solid var(--border-color);
   }
 
   table.custom-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    color: var(--text-primary);
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: #E2E8F0;
   }
 
-  /* Status Badges */
+  /* Badges */
   .badge-status {
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
     font-weight: 700;
   }
   .bg-green { background: rgba(16, 185, 129, 0.15); color: var(--accent-teal); }
   .bg-amber { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
   .bg-red { background: rgba(239, 68, 68, 0.15); color: var(--accent-rose); }
 
-  /* Deck Controls Bottom Bar */
+  /* Controls Bar */
   .controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 30px;
-    background: rgba(15, 23, 42, 0.9);
+    padding: 16px 32px;
+    background: rgba(11, 15, 25, 0.95);
     border-top: 1px solid var(--border-color);
   }
 
@@ -351,7 +349,7 @@
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    padding: 8px 18px;
+    padding: 9px 20px;
     border-radius: 8px;
     font-size: 13px;
     font-weight: 600;
@@ -365,7 +363,7 @@
   }
 
   .slide-counter {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     color: var(--accent-cyan);
   }
@@ -373,7 +371,7 @@
 </head>
 <body>
 
-  <!-- Header & Tab Navigation -->
+  <!-- Header & Navigation -->
   <header>
     <div class="brand">
       <div class="brand-logo">ANP</div>
@@ -394,7 +392,7 @@
     </nav>
   </header>
 
-  <!-- Main Slide Deck Container -->
+  <!-- Main Presentation Container -->
   <main>
     <div class="deck-container">
 
@@ -402,7 +400,7 @@
       <div class="slide active">
         <div class="slide-header">
           <div>
-            <span class="slide-tag">01 • Profile & Positioning</span>
+            <span class="slide-tag">01 • Profile & Executive Positioning</span>
             <div class="slide-title">Bridging Operations, Planning & Executive Decisions</div>
           </div>
           <span class="badge-nda">Reconstructed Examples • Synthetic Data</span>
@@ -413,15 +411,15 @@
               <div class="photo-frame">
                 <img id="profileImg" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Audra Nesia Pratidina">
               </div>
-              <h3 style="font-size:16px; font-weight:700;">Audra Nesia P.</h3>
+              <h3 style="font-size:15px; font-weight:700;">Audra Nesia P.</h3>
               <p style="font-size:11px; color:var(--text-secondary); margin-top:2px;">Corporate Planning & IR Specialist</p>
               <label class="photo-upload-btn">
-                📷 Ganti Foto Saya
+                📷 Upload Foto
                 <input type="file" id="imageInput" accept="image/*" style="display:none;" onchange="loadPhoto(event)">
               </label>
             </div>
             <div>
-              <div class="grid-4" style="margin-bottom: 20px;">
+              <div class="grid-4" style="margin-bottom: 18px;">
                 <div class="card">
                   <span class="card-label">Experience</span>
                   <div class="card-val">10+ Yrs</div>
@@ -438,14 +436,14 @@
                   <span style="font-size:10px; color:var(--text-secondary);">XBRL & Disclosure</span>
                 </div>
                 <div class="card">
-                  <span class="card-label">Background</span>
+                  <span class="card-label">Education</span>
                   <div class="card-val">UGM</div>
                   <span style="font-size:10px; color:var(--text-secondary);">B. Architecture</span>
                 </div>
               </div>
-              <div class="card" style="background: rgba(37, 99, 235, 0.1); border-color: rgba(37, 99, 235, 0.3);">
-                <h4 style="color:var(--accent-cyan); font-size:13px; margin-bottom:6px;">Executive Positioning</h4>
-                <p style="font-size:12px; line-height:1.6; color:#E2E8F0;">
+              <div class="card" style="background: rgba(37, 99, 235, 0.08); border-color: rgba(37, 99, 235, 0.25);">
+                <h4 style="color:var(--accent-cyan); font-size:13px; margin-bottom:6px;">Executive Positioning Narrative</h4>
+                <p style="font-size:12px; line-height:1.6; color:#CBD5E1;">
                   Menghubungkan pemahaman teknik operasional lapangan (properti, modular, konstruksi) dengan tata kelola kinerja tingkat korporat (RKAP, KPI Scorecard) hingga laporan keterbukaan informasi pasar modal (OJK, BEI, XBRL, ARA 2025).
                 </p>
               </div>
@@ -453,12 +451,12 @@
           </div>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
           <span>1 / 8</span>
         </div>
       </div>
 
-      <!-- SLIDE 2: CAREER JOURNEY -->
+      <!-- SLIDE 2: JOURNEY -->
       <div class="slide">
         <div class="slide-header">
           <div>
@@ -471,36 +469,36 @@
           <div class="grid-4">
             <div class="card">
               <span class="card-label">2015 – 2018</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0;">Commercial & Admin</h4>
+              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">Commercial & Admin</h4>
               <p style="font-size:11px; color:var(--text-secondary);">Property Division</p>
-              <ul style="margin-top:10px; font-size:11px; color:var(--text-primary); padding-left:14px;">
+              <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
                 <li>Kontrak & administrasi proyek</li>
                 <li>Dokumentasi komersial</li>
               </ul>
             </div>
             <div class="card">
               <span class="card-label">2018 – 2020</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0;">Project Controls</h4>
+              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">Project Controls</h4>
               <p style="font-size:11px; color:var(--text-secondary);">Modular & Concession</p>
-              <ul style="margin-top:10px; font-size:11px; color:var(--text-primary); padding-left:14px;">
+              <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
                 <li>Monitoring progress & budget</li>
                 <li>Earned Value Analysis (EVM)</li>
               </ul>
             </div>
             <div class="card" style="border-color: var(--accent-blue);">
               <span class="card-label">2020 – 2025</span>
-              <h4 style="color:var(--accent-teal); margin:6px 0;">Strategic Control</h4>
+              <h4 style="color:var(--accent-teal); margin:6px 0; font-size:15px;">Strategic Control</h4>
               <p style="font-size:11px; color:var(--text-secondary);">Risk & Governance</p>
-              <ul style="margin-top:10px; font-size:11px; color:var(--text-primary); padding-left:14px;">
+              <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
                 <li>Koordinasi RKAP 13 divisi</li>
                 <li>Arsitektur KPI & Scorecard BPC</li>
               </ul>
             </div>
             <div class="card">
               <span class="card-label">2026 – Present</span>
-              <h4 style="color:var(--accent-amber); margin:6px 0;">Investor Relations</h4>
+              <h4 style="color:var(--accent-amber); margin:6px 0; font-size:15px;">Investor Relations</h4>
               <p style="font-size:11px; color:var(--text-secondary);">Corporate Secretary</p>
-              <ul style="margin-top:10px; font-size:11px; color:var(--text-primary); padding-left:14px;">
+              <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
                 <li>Pelaporan OJK & BEI XBRL</li>
                 <li>Materi CEO Talks & Annual Report</li>
               </ul>
@@ -508,7 +506,7 @@
           </div>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
           <span>2 / 8</span>
         </div>
       </div>
@@ -522,42 +520,42 @@
           </div>
           <span class="badge-nda">6-Stage Standard</span>
         </div>
-        <div class="slide-body" style="align-items: center;">
+        <div class="slide-body">
           <div class="grid-3">
             <div class="card">
               <span class="card-label">01 • PLAN</span>
               <h4 style="color:var(--accent-cyan); margin-top:4px;">RKAP & Scenario</h4>
-              <p style="font-size:11px; color:var(--text-secondary); margin-top:6px;">Penyusunan anggaran, asumsi makro, dan pemodelan sensitivitas.</p>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Penyusunan anggaran, asumsi makro, dan pemodelan sensitivitas.</p>
             </div>
             <div class="card">
               <span class="card-label">02 • CASCADE</span>
               <h4 style="color:var(--accent-cyan); margin-top:4px;">KPI Alignment</h4>
-              <p style="font-size:11px; color:var(--text-secondary); margin-top:6px;">Penurunan target RKAP ke 13 divisi lengkap dengan RAG threshold.</p>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Penurunan target RKAP ke 13 divisi lengkap dengan RAG threshold.</p>
             </div>
             <div class="card">
               <span class="card-label">03 • MONITOR</span>
               <h4 style="color:var(--accent-cyan); margin-top:4px;">Actual vs Plan</h4>
-              <p style="font-size:11px; color:var(--text-secondary); margin-top:6px;">Pencatatan realisasi bulanan via BPC & SAP FICO.</p>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Pencatatan realisasi bulanan via BPC & SAP FICO.</p>
             </div>
             <div class="card">
               <span class="card-label">04 • DIAGNOSE</span>
               <h4 style="color:var(--accent-teal); margin-top:4px;">Variance & Risk</h4>
-              <p style="font-size:11px; color:var(--text-secondary); margin-top:6px;">Analisis akar masalah, deviasi CTC, dan proyek kritis.</p>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Analisis akar masalah, deviasi CTC, dan proyek kritis.</p>
             </div>
             <div class="card">
               <span class="card-label">05 • DECIDE</span>
               <h4 style="color:var(--accent-amber); margin-top:4px;">Management Review</h4>
-              <p style="font-size:11px; color:var(--text-secondary); margin-top:6px;">Penyiapan Board Pack untuk BOD/BOC dan Holding.</p>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Penyiapan Board Pack untuk BOD/BOC dan Holding.</p>
             </div>
             <div class="card">
               <span class="card-label">06 • FOLLOW UP</span>
               <h4 style="color:var(--accent-rose); margin-top:4px;">Evidence-Based Log</h4>
-              <p style="font-size:11px; color:var(--text-secondary); margin-top:6px;">Status aksi ditutup hanya jika ada bukti dokumen sah (BA/Invoice).</p>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Status aksi ditutup hanya jika ada bukti dokumen sah (BA/Invoice).</p>
             </div>
           </div>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
           <span>3 / 8</span>
         </div>
       </div>
@@ -608,7 +606,7 @@
           </table>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
           <span>4 / 8</span>
         </div>
       </div>
@@ -666,7 +664,7 @@
           </table>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
           <span>5 / 8</span>
         </div>
       </div>
@@ -685,27 +683,27 @@
             <div class="card">
               <span class="card-label">Revenue Index</span>
               <div class="card-val" style="color:var(--accent-amber);">94</div>
-              <span style="font-size:10px; color:var(--text-secondary);">Target = 100</span>
+              <span style="font-size:11px; color:var(--text-secondary);">Target = 100</span>
             </div>
             <div class="card">
               <span class="card-label">Gross Margin</span>
               <div class="card-val" style="color:var(--accent-rose);">8.2%</div>
-              <span style="font-size:10px; color:var(--text-secondary);">Plan = 10.0%</span>
+              <span style="font-size:11px; color:var(--text-secondary);">Plan = 10.0%</span>
             </div>
             <div class="card">
               <span class="card-label">Cash Conversion</span>
               <div class="card-val" style="color:var(--accent-teal);">87%</div>
-              <span style="font-size:10px; color:var(--text-secondary);">Plan = 90%</span>
+              <span style="font-size:11px; color:var(--text-secondary);">Plan = 90%</span>
             </div>
             <div class="card">
               <span class="card-label">Action Completed</span>
               <div class="card-val" style="color:var(--accent-cyan);">73%</div>
-              <span style="font-size:10px; color:var(--text-secondary);">On Schedule</span>
+              <span style="font-size:11px; color:var(--text-secondary);">On Schedule</span>
             </div>
           </div>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
           <span>6 / 8</span>
         </div>
       </div>
@@ -756,7 +754,7 @@
           </table>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
           <span>7 / 8</span>
         </div>
       </div>
@@ -774,38 +772,38 @@
           <div class="grid-3">
             <div class="card">
               <span class="card-label">Artifact 01</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0;">RKAP Scenario Model</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Tabel sensitivitas dan simulasi anggaran interaktif.</p>
+              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">RKAP Scenario Model</h4>
+              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Tabel sensitivitas dan simulasi anggaran interaktif.</p>
             </div>
             <div class="card">
               <span class="card-label">Artifact 02</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0;">KPI Scorecard BPC</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Konsolidasi 13 divisi berbasis RAG threshold.</p>
+              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">KPI Scorecard BPC</h4>
+              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Konsolidasi 13 divisi berbasis RAG threshold.</p>
             </div>
             <div class="card">
               <span class="card-label">Artifact 03</span>
-              <h4 style="color:var(--accent-teal); margin:6px 0;">Executive Board Deck</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Materi rapat direksi & dewan komisaris.</p>
+              <h4 style="color:var(--accent-teal); margin:6px 0; font-size:15px;">Executive Board Deck</h4>
+              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Materi rapat direksi & dewan komisaris.</p>
             </div>
             <div class="card">
               <span class="card-label">Artifact 04</span>
-              <h4 style="color:var(--accent-amber); margin:6px 0;">Action Tracker System</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Log pemantauan tindak lanjut berbasis bukti fisik.</p>
+              <h4 style="color:var(--accent-amber); margin:6px 0; font-size:15px;">Action Tracker System</h4>
+              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Log pemantauan tindak lanjut berbasis bukti fisik.</p>
             </div>
             <div class="card">
               <span class="card-label">Artifact 05</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0;">Project EVM Sheet</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Pemantauan deviasi CPI, SPI, dan Cost to Complete.</p>
+              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">Project EVM Sheet</h4>
+              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Pemantauan deviasi CPI, SPI, dan Cost to Complete.</p>
             </div>
             <div class="card">
               <span class="card-label">Artifact 06</span>
-              <h4 style="color:var(--accent-rose); margin:6px 0;">OJK XBRL Log</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Rekonsiliasi taksonomi laporan keuangan BEI.</p>
+              <h4 style="color:var(--accent-rose); margin:6px 0; font-size:15px;">OJK XBRL Log</h4>
+              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Rekonsiliasi taksonomi laporan keuangan BEI.</p>
             </div>
           </div>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
           <span>8 / 8</span>
         </div>
       </div>
@@ -813,7 +811,7 @@
     </div>
   </main>
 
-  <!-- Bottom Navigation Bar -->
+  <!-- Controls Bar -->
   <div class="controls">
     <button class="nav-btn" onclick="prevSlide()">← Previous Slide</button>
     <div class="slide-counter" id="slideNum">Slide 1 of 8</div>
@@ -855,13 +853,11 @@
       }
     }
 
-    // Keyboard Arrow Navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
       if (e.key === 'ArrowLeft') prevSlide();
     });
 
-    // Custom Photo Upload JS
     function loadPhoto(event) {
       const output = document.getElementById('profileImg');
       output.src = URL.createObjectURL(event.target.files[0]);
