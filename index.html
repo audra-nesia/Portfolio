@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audra Nesia Pratidina — Corporate Performance & Strategy Portfolio</title>
+<title>Audra Nesia Pratidina — Corporate Strategy & Performance Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg-main: #0B0F19;
     --bg-card: #151D2A;
     --bg-card-hover: #1E293B;
-    --accent-blue: #3B82F6;
+    --accent-blue: #2563EB;
     --accent-cyan: #06B6D4;
     --accent-teal: #10B981;
     --accent-amber: #F59E0B;
@@ -18,14 +18,10 @@
     --text-primary: #F8FAFC;
     --text-secondary: #94A3B8;
     --border-color: #243044;
-    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
   }
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -68,19 +64,10 @@
     font-weight: 800;
     color: white;
     font-size: 14px;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   }
 
-  .brand-title {
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-  }
-
-  .brand-subtitle {
-    font-size: 11px;
-    color: var(--text-secondary);
-  }
+  .brand-title { font-size: 15px; font-weight: 700; letter-spacing: 0.3px; }
+  .brand-subtitle { font-size: 11px; color: var(--text-secondary); }
 
   nav.slide-tabs {
     display: flex;
@@ -89,6 +76,7 @@
     padding: 4px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
+    overflow-x: auto;
   }
 
   .tab-btn {
@@ -104,17 +92,12 @@
     white-space: nowrap;
   }
 
-  .tab-btn:hover {
-    color: var(--text-primary);
-  }
-
   .tab-btn.active {
     background: var(--accent-blue);
     color: white;
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
   }
 
-  /* Main Presentation Container */
+  /* Container Deck */
   main {
     flex: 1;
     display: flex;
@@ -135,7 +118,6 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 36px 44px;
-    position: relative;
   }
 
   .slide {
@@ -147,9 +129,7 @@
     animation: fadeIn 0.35s ease-out;
   }
 
-  .slide.active {
-    display: flex;
-  }
+  .slide.active { display: flex; }
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(6px); }
@@ -167,7 +147,6 @@
   }
 
   .slide-tag {
-    display: inline-block;
     font-size: 11px;
     font-weight: 700;
     color: var(--accent-cyan);
@@ -176,12 +155,7 @@
     margin-bottom: 4px;
   }
 
-  .slide-title {
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--text-primary);
-    line-height: 1.3;
-  }
+  .slide-title { font-size: 22px; font-weight: 800; color: var(--text-primary); }
 
   .badge-nda {
     background: rgba(16, 185, 129, 0.1);
@@ -193,11 +167,7 @@
     border-radius: 20px;
   }
 
-  .slide-body {
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
+  .slide-body { flex: 1; display: flex; align-items: center; }
 
   .slide-footer {
     display: flex;
@@ -208,13 +178,12 @@
     margin-top: 24px;
     font-size: 11px;
     color: var(--text-secondary);
-    font-weight: 500;
   }
 
-  /* Profile Slide Layout */
+  /* Profile Layout & Photo Frame */
   .profile-grid {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 260px 1fr;
     gap: 32px;
     width: 100%;
     align-items: center;
@@ -232,14 +201,13 @@
   }
 
   .photo-frame {
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     border: 3px solid var(--accent-blue);
     padding: 3px;
     background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
     margin-bottom: 14px;
-    position: relative;
     overflow: hidden;
   }
 
@@ -255,18 +223,13 @@
     color: var(--accent-cyan);
     background: rgba(6, 182, 212, 0.1);
     border: 1px dashed rgba(6, 182, 212, 0.4);
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
     margin-top: 10px;
-    transition: all 0.2s ease;
   }
 
-  .photo-upload-btn:hover {
-    background: rgba(6, 182, 212, 0.2);
-  }
-
-  /* Grid Layouts */
+  /* Cards & Grid System */
   .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; width: 100%; }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; width: 100%; }
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; width: 100%; }
@@ -276,27 +239,10 @@
     border: 1px solid var(--border-color);
     border-radius: 14px;
     padding: 20px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
-  .card:hover {
-    border-color: rgba(59, 130, 246, 0.5);
-  }
-
-  .card-val {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin: 6px 0;
-  }
-
-  .card-label {
-    font-size: 11px;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-  }
+  .card-val { font-size: 26px; font-weight: 800; color: var(--text-primary); margin: 6px 0; }
+  .card-label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; }
 
   /* Custom Clean Table */
   table.custom-table {
@@ -324,13 +270,7 @@
     color: #E2E8F0;
   }
 
-  /* Badges */
-  .badge-status {
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
-  }
+  .badge-status { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; }
   .bg-green { background: rgba(16, 185, 129, 0.15); color: var(--accent-teal); }
   .bg-amber { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
   .bg-red { background: rgba(239, 68, 68, 0.15); color: var(--accent-rose); }
@@ -354,19 +294,9 @@
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
   }
 
-  .nav-btn:hover {
-    background: var(--accent-blue);
-    border-color: var(--accent-blue);
-  }
-
-  .slide-counter {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--accent-cyan);
-  }
+  .slide-counter { font-size: 13px; font-weight: 700; color: var(--accent-cyan); }
 </style>
 </head>
 <body>
@@ -377,7 +307,7 @@
       <div class="brand-logo">ANP</div>
       <div>
         <div class="brand-title">AUDRA NESIA PRATIDINA</div>
-        <div class="brand-subtitle">Corporate Strategy • Performance • Investor Relations</div>
+        <div class="brand-subtitle">Corporate Strategy • Business Performance • Investor Relations</div>
       </div>
     </div>
     <nav class="slide-tabs" id="tabNav">
@@ -388,20 +318,21 @@
       <button class="tab-btn" onclick="goToSlide(4)">05 Scorecard</button>
       <button class="tab-btn" onclick="goToSlide(5)">06 Readout</button>
       <button class="tab-btn" onclick="goToSlide(6)">07 Action Log</button>
-      <button class="tab-btn" onclick="goToSlide(7)">08 Deliverables</button>
+      <button class="tab-btn" onclick="goToSlide(7)">08 EVM Control</button>
+      <button class="tab-btn" onclick="goToSlide(8)">09 Deliverables</button>
     </nav>
   </header>
 
-  <!-- Main Presentation Container -->
+  <!-- Main Presentation Deck -->
   <main>
     <div class="deck-container">
 
-      <!-- SLIDE 1: PROFILE WITH PHOTO FRAME -->
+      <!-- SLIDE 1: PROFILE (Matching PDF Slide 2) -->
       <div class="slide active">
         <div class="slide-header">
           <div>
-            <span class="slide-tag">01 • Profile & Executive Positioning</span>
-            <div class="slide-title">Bridging Operations, Planning & Executive Decisions</div>
+            <span class="slide-tag">01 • Profile & Positioning</span>
+            <div class="slide-title">Bridging Operations, Corporate Planning & Executive Decisions</div>
           </div>
           <span class="badge-nda">Reconstructed Examples • Synthetic Data</span>
         </div>
@@ -423,40 +354,40 @@
                 <div class="card">
                   <span class="card-label">Experience</span>
                   <div class="card-val">10+ Yrs</div>
-                  <span style="font-size:10px; color:var(--text-secondary);">Project & Enterprise</span>
+                  <span style="font-size:10px; color:var(--text-secondary);">Construction & Property</span>
                 </div>
                 <div class="card">
                   <span class="card-label">Scope</span>
                   <div class="card-val">13 Units</div>
-                  <span style="font-size:10px; color:var(--text-secondary);">KPI Governance</span>
+                  <span style="font-size:10px; color:var(--text-secondary);">KPI Coordination</span>
                 </div>
                 <div class="card">
-                  <span class="card-label">Focus</span>
-                  <div class="card-val">OJK / IDX</div>
-                  <span style="font-size:10px; color:var(--text-secondary);">XBRL & Disclosure</span>
+                  <span class="card-label">Domains</span>
+                  <div class="card-val">4 Layers</div>
+                  <span style="font-size:10px; color:var(--text-secondary);">Project → Enterprise</span>
                 </div>
                 <div class="card">
-                  <span class="card-label">Education</span>
-                  <div class="card-val">UGM</div>
-                  <span style="font-size:10px; color:var(--text-secondary);">B. Architecture</span>
+                  <span class="card-label">Work Style</span>
+                  <div class="card-val">Action-Led</div>
+                  <span style="font-size:10px; color:var(--text-secondary);">Structured Support</span>
                 </div>
               </div>
               <div class="card" style="background: rgba(37, 99, 235, 0.08); border-color: rgba(37, 99, 235, 0.25);">
                 <h4 style="color:var(--accent-cyan); font-size:13px; margin-bottom:6px;">Executive Positioning Narrative</h4>
                 <p style="font-size:12px; line-height:1.6; color:#CBD5E1;">
-                  Bridging project-level operational understanding (property, modular, construction) with enterprise performance governance (RKAP, KPI Scorecards) and capital market regulatory disclosures (OJK, IDX, XBRL, ARA 2025 finalist reporting).
+                  From operational data and budget assumptions to management-ready performance insights, issue escalation, and execution follow-through across corporate planning, KPI governance, and capital market disclosures (OJK, IDX, XBRL, ARA 2025 finalist).
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
-          <span>1 / 8</span>
+          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>1 / 9</span>
         </div>
       </div>
 
-      <!-- SLIDE 2: JOURNEY -->
+      <!-- SLIDE 2: JOURNEY (Matching PDF Slide 3) -->
       <div class="slide">
         <div class="slide-header">
           <div>
@@ -481,17 +412,17 @@
               <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">Project Controls</h4>
               <p style="font-size:11px; color:var(--text-secondary);">Modular & Concession</p>
               <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
-                <li>Schedule & budget monitoring</li>
+                <li>Schedule, cost & progress monitoring</li>
                 <li>Earned Value Analysis (EVM)</li>
               </ul>
             </div>
             <div class="card" style="border-color: var(--accent-blue);">
               <span class="card-label">2020 – 2025</span>
               <h4 style="color:var(--accent-teal); margin:6px 0; font-size:15px;">Strategic Control</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Risk & Governance</p>
+              <p style="font-size:11px; color:var(--text-secondary);">Risk & Strategic PMO</p>
               <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
-                <li>13-unit RKAP coordination</li>
-                <li>KPI architecture & BPC scorecard</li>
+                <li>RKAP & KPI review across 13 units</li>
+                <li>Performance BPC monitoring</li>
               </ul>
             </div>
             <div class="card">
@@ -499,38 +430,38 @@
               <h4 style="color:var(--accent-amber); margin:6px 0; font-size:15px;">Investor Relations</h4>
               <p style="font-size:11px; color:var(--text-secondary);">Corporate Secretary</p>
               <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
-                <li>OJK & IDX XBRL filings</li>
-                <li>CEO Talks & Annual Report packs</li>
+                <li>OJK & IDX XBRL disclosures</li>
+                <li>Investor decks & Annual Report packs</li>
               </ul>
             </div>
           </div>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
-          <span>2 / 8</span>
+          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>2 / 9</span>
         </div>
       </div>
 
-      <!-- SLIDE 3: FRAMEWORK -->
+      <!-- SLIDE 3: FRAMEWORK (Matching PDF Slide 4) -->
       <div class="slide">
         <div class="slide-header">
           <div>
             <span class="slide-tag">03 • Integrated Framework</span>
-            <div class="slide-title">Business Performance Management Cycle</div>
+            <div class="slide-title">Integrated Business Performance Management Cycle</div>
           </div>
-          <span class="badge-nda">6-Stage Standard</span>
+          <span class="badge-nda">Repeatable Logic Standard</span>
         </div>
         <div class="slide-body">
           <div class="grid-3">
             <div class="card">
               <span class="card-label">01 • PLAN</span>
-              <h4 style="color:var(--accent-cyan); margin-top:4px;">RKAP & Scenario</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Budget preparation, macro assumptions, and sensitivity modeling.</p>
+              <h4 style="color:var(--accent-cyan); margin-top:4px;">Budget / RKAP</h4>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Budget build scenarios, macro assumptions, and sensitivity reviews.</p>
             </div>
             <div class="card">
               <span class="card-label">02 • CASCADE</span>
-              <h4 style="color:var(--accent-cyan); margin-top:4px;">KPI Alignment</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Cascading RKAP targets across 13 divisions with RAG thresholds.</p>
+              <h4 style="color:var(--accent-cyan); margin-top:4px;">Targets & KPI</h4>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Cascading RKAP targets across 13 divisions with clear accountabilities.</p>
             </div>
             <div class="card">
               <span class="card-label">03 • MONITOR</span>
@@ -539,45 +470,45 @@
             </div>
             <div class="card">
               <span class="card-label">04 • DIAGNOSE</span>
-              <h4 style="color:var(--accent-teal); margin-top:4px;">Variance & Risk</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Root-cause analysis, Cost-to-Complete (CTC) audits, & critical project watchlist.</p>
+              <h4 style="color:var(--accent-teal); margin-top:4px;">Variance / Risk</h4>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Identifying deviations, Cost-to-Complete (CTC) audits, and critical risk flags.</p>
             </div>
             <div class="card">
               <span class="card-label">05 • DECIDE</span>
-              <h4 style="color:var(--accent-amber); margin-top:4px;">Management Review</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Board Pack preparation for BOD, BOC, and Holding reviews.</p>
+              <h4 style="color:var(--accent-amber); margin-top:4px;">Management Value</h4>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Preparing executive decision packs for BOD & BOC forums.</p>
             </div>
             <div class="card">
               <span class="card-label">06 • FOLLOW UP</span>
-              <h4 style="color:var(--accent-rose); margin-top:4px;">Evidence-Based Log</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Action items closed strictly based on verifiable evidence (BA/Invoice).</p>
+              <h4 style="color:var(--accent-rose); margin-top:4px;">Action / Owner</h4>
+              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Items closed strictly based on verifiable evidence (BA/Invoice).</p>
             </div>
           </div>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
-          <span>3 / 8</span>
+          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
+          <span>3 / 9</span>
         </div>
       </div>
 
-      <!-- SLIDE 4: RKAP CASE -->
+      <!-- SLIDE 4: RKAP PLAN (Matching PDF Slide 5) -->
       <div class="slide">
         <div class="slide-header">
           <div>
             <span class="slide-tag">04 • Case 01: Corporate Planning</span>
-            <div class="slide-title">Annual Business Planning & Scenario Model</div>
+            <div class="slide-title">Annual Business Planning & Scenario Analysis</div>
           </div>
-          <span class="badge-nda">Synthetic Scale</span>
+          <span class="badge-nda">13 Cross-Unit Inputs</span>
         </div>
         <div class="slide-body">
           <table class="custom-table">
             <thead>
               <tr>
-                <th>RKAP Scenario</th>
+                <th>Scenario</th>
                 <th>Revenue Index</th>
                 <th>Cost Index</th>
                 <th>EBIT Index</th>
-                <th>Key Sensitivity & Risk Factor</th>
+                <th>Key Sensitivity Factor</th>
               </tr>
             </thead>
             <tbody>
@@ -586,285 +517,24 @@
                 <td>86</td>
                 <td>91</td>
                 <td>-5</td>
-                <td>Delayed ground-breaking on major anchor projects</td>
+                <td>Delayed project starts & procurement lead times</td>
               </tr>
               <tr>
                 <td><b style="color:var(--accent-cyan);">Base Case</b></td>
                 <td>100</td>
                 <td>93</td>
                 <td>7</td>
-                <td>Baseline execution matching RKAP schedule</td>
+                <td>Baseline execution matching RKAP target</td>
               </tr>
               <tr>
                 <td><b style="color:var(--accent-teal);">Upside Case</b></td>
                 <td>112</td>
                 <td>101</td>
                 <td>11</td>
-                <td>Accelerated conversion of new contract wins</td>
+                <td>Faster conversion of new contract wins</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
-          <span>4 / 8</span>
-        </div>
-      </div>
-
-      <!-- SLIDE 5: SCORECARD -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">05 • Case 02: Performance Governance</span>
-            <div class="slide-title">KPI Architecture & RAG Scorecard</div>
-          </div>
-          <span class="badge-nda">13 Divisions Covered</span>
-        </div>
-        <div class="slide-body">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>KPI / Performance Dimension</th>
-                <th>RKAP Target</th>
-                <th>YTD Actual</th>
-                <th>Attainment</th>
-                <th>RAG Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Business Revenue (Revenue Index)</td>
-                <td>100</td>
-                <td>94</td>
-                <td>94%</td>
-                <td><span class="badge-status bg-amber">WATCH</span></td>
-              </tr>
-              <tr>
-                <td>New Contract Wins (OK Index)</td>
-                <td>100</td>
-                <td>81</td>
-                <td>81%</td>
-                <td><span class="badge-status bg-red">ACTION REQUIRED</span></td>
-              </tr>
-              <tr>
-                <td>Cash Conversion Ratio (CCR)</td>
-                <td>90%</td>
-                <td>87%</td>
-                <td>97%</td>
-                <td><span class="badge-status bg-amber">WATCH</span></td>
-              </tr>
-              <tr>
-                <td>Project Milestone Completion</td>
-                <td>95%</td>
-                <td>98%</td>
-                <td>103%</td>
-                <td><span class="badge-status bg-green">ON TRACK</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
-          <span>5 / 8</span>
-        </div>
-      </div>
-
-      <!-- SLIDE 6: READOUT -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">06 • Case 03: Executive Readout</span>
-            <div class="slide-title">Translating Monthly Data to Decisions</div>
-          </div>
-          <span class="badge-nda">Monthly Review</span>
-        </div>
-        <div class="slide-body">
-          <div class="grid-4" style="width:100%;">
-            <div class="card">
-              <span class="card-label">Revenue Index</span>
-              <div class="card-val" style="color:var(--accent-amber);">94</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Target = 100</span>
-            </div>
-            <div class="card">
-              <span class="card-label">Gross Margin</span>
-              <div class="card-val" style="color:var(--accent-rose);">8.2%</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Plan = 10.0%</span>
-            </div>
-            <div class="card">
-              <span class="card-label">Cash Conversion</span>
-              <div class="card-val" style="color:var(--accent-teal);">87%</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Plan = 90%</span>
-            </div>
-            <div class="card">
-              <span class="card-label">Action Completed</span>
-              <div class="card-val" style="color:var(--accent-cyan);">73%</div>
-              <span style="font-size:11px; color:var(--text-secondary);">On Schedule</span>
-            </div>
-          </div>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
-          <span>6 / 8</span>
-        </div>
-      </div>
-
-      <!-- SLIDE 7: ACTION LOG -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">07 • Case 04: Action Governance</span>
-            <div class="slide-title">Evidence-Based Management Action Log</div>
-          </div>
-          <span class="badge-nda">Traceable Log</span>
-        </div>
-        <div class="slide-body">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>Priority Issue</th>
-                <th>Division Owner</th>
-                <th>Target Due</th>
-                <th>Log Status</th>
-                <th>Verifiable Evidence Required</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Progress Billing Documentation</td>
-                <td>Building Div A</td>
-                <td>Week 2</td>
-                <td><span class="badge-status bg-amber">WATCH</span></td>
-                <td>Signed Physical Handover Minutes (BA)</td>
-              </tr>
-              <tr>
-                <td>Project Milestone Completion B</td>
-                <td>Modular Div</td>
-                <td>Week 3</td>
-                <td><span class="badge-status bg-green">ON TRACK</span></td>
-                <td>MK Signed Progress Certification</td>
-              </tr>
-              <tr>
-                <td>Overdue Collection Recovery C</td>
-                <td>Property Div</td>
-                <td>Week 4</td>
-                <td><span class="badge-status bg-red">AT RISK</span></td>
-                <td>Recovery Plan & Partial Wire Proof</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
-          <span>7 / 8</span>
-        </div>
-      </div>
-
-      <!-- SLIDE 8: DELIVERABLES -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">08 • Representative Deliverables</span>
-            <div class="slide-title">Analytical Artifacts & Work Showcase</div>
-          </div>
-          <span class="badge-nda">Portfolio Showcase</span>
-        </div>
-        <div class="slide-body">
-          <div class="grid-3">
-            <div class="card">
-              <span class="card-label">Artifact 01</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">RKAP Scenario Model</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Interactive sensitivity and budget simulation model.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">Artifact 02</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">KPI Scorecard BPC</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">13-division consolidation based on RAG thresholds.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">Artifact 03</span>
-              <h4 style="color:var(--accent-teal); margin:6px 0; font-size:15px;">Executive Board Deck</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Monthly review packs for BOD & BOC meetings.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">Artifact 04</span>
-              <h4 style="color:var(--accent-amber); margin:6px 0; font-size:15px;">Action Tracker System</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Evidence-based follow-up and resolution register.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">Artifact 05</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">Project EVM Sheet</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">CPI, SPI, and Cost-to-Complete variance tracking.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">Artifact 06</span>
-              <h4 style="color:var(--accent-rose); margin:6px 0; font-size:15px;">OJK / IDX XBRL Log</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Financial statement taxonomy & disclosure reconciliation.</p>
-            </div>
-          </div>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — PORTFOLIO</span>
-          <span>8 / 8</span>
-        </div>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- Controls Bar -->
-  <div class="controls">
-    <button class="nav-btn" onclick="prevSlide()">← Previous Slide</button>
-    <div class="slide-counter" id="slideNum">Slide 1 of 8</div>
-    <button class="nav-btn" onclick="nextSlide()">Next Slide →</button>
-  </div>
-
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const tabs = document.querySelectorAll('.tab-btn');
-    const slideNum = document.getElementById('slideNum');
-
-    function updateDeck() {
-      slides.forEach((slide, idx) => {
-        slide.classList.toggle('active', idx === currentSlide);
-      });
-      tabs.forEach((tab, idx) => {
-        tab.classList.toggle('active', idx === currentSlide);
-      });
-      slideNum.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
-    }
-
-    function goToSlide(index) {
-      currentSlide = index;
-      updateDeck();
-    }
-
-    function nextSlide() {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        updateDeck();
-      }
-    }
-
-    function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateDeck();
-      }
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
-    });
-
-    function loadPhoto(event) {
-      const output = document.getElementById('profileImg');
-      output.src = URL.createObjectURL(event.target.files[0]);
-      output.onload = function() {
-        URL.revokeObjectURL(output.src);
-      }
-    }
-  </script>
-</body>
-</html>
+          <span>AUDRA
