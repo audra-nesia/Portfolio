@@ -36,10 +36,22 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
+        }
+
+        .hero-profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-teal);
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.2);
         }
 
         .hero-tag {
@@ -232,7 +244,7 @@
 
         footer h2 {
             color: var(--text-main);
-            margin-bottom: 1rem;
+            margin-bottom: 1.0rem;
         }
     </style>
 </head>
@@ -240,6 +252,7 @@
 
     <!-- HERO SECTION -->
     <header>
+        <img src="profile.jpg" alt="Audra Nesia Pratidina" class="hero-profile-img">
         <div class="hero-tag">Selected Works / 2015–2026</div>
         <h1>Corporate Planning &amp; Performance Portfolio</h1>
         <p class="hero-subtitle">Strategic PMO | Management Reporting | Regulatory Disclosure</p>
@@ -319,118 +332,4 @@
                 <div class="card"><h3>03. MONITOR</h3><p>Actual vs plan tracking</p></div>
                 <div class="card"><h3>04. DIAGNOSE</h3><p>Variance / risk assessment</p></div>
                 <div class="card"><h3>05. DECIDE</h3><p>Management review &amp; value</p></div>
-                <div class="card orange"><h3>06. FOLLOW UP</h3><p>Action items &amp; owner accountability</p></div>
-            </div>
-        </section>
-
-        <!-- 04 CASES -->
-        <section id="cases">
-            <div class="section-header">
-                <span class="section-number">04</span>
-                <h2>Core Cases &amp; Deliverables</h2>
-            </div>
-            
-            <!-- Case 1 -->
-            <div class="card" style="margin-bottom: 2rem;">
-                <span class="hero-tag">Case 01</span>
-                <h3>Annual Business Planning &amp; Scenario Analysis (RKAP)</h3>
-                <p style="margin-bottom: 1.5rem;">Coordinating submissions, challenging assumptions, consolidating scenarios, and preparing management-ready planning packs across 13 cross-unit inputs.</p>
-                <table>
-                    <thead>
-                        <tr><th>Scenario</th><th>Revenue Index</th><th>Cost Index</th><th>EBIT Index</th><th>Key Sensitivity</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Downside</td><td>86</td><td>91</td><td>-5</td><td>Delayed project starts</td></tr>
-                        <tr><td>Base Case</td><td>100</td><td>93</td><td>7</td><td>Baseline execution</td></tr>
-                        <tr><td>Upside Case</td><td>112</td><td>101</td><td>11</td><td>Faster conversion</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Case 2 -->
-            <div class="card" style="margin-bottom: 2rem;">
-                <span class="hero-tag">Case 02</span>
-                <h3>Performance Governance &amp; Scorecard Architecture</h3>
-                <p style="margin-bottom: 1.5rem;">Target definition, owner assignment, periodic review, and corrective action workflows across 42 demo indicators.</p>
-                <table>
-                    <thead>
-                        <tr><th>KPI / Dimension</th><th>Target</th><th>Actual</th><th>Attainment</th><th>Flag</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Revenue index</td><td>100</td><td>94</td><td>94%</td><td><span class="badge watch">Watch</span></td></tr>
-                        <tr><td>New contract index</td><td>100</td><td>81</td><td>81%</td><td><span class="badge action">Action</span></td></tr>
-                        <tr><td>Cash conversion</td><td>90%</td><td>87%</td><td>97%</td><td><span class="badge watch">Watch</span></td></tr>
-                        <tr><td>Project milestones</td><td>95%</td><td>98%</td><td>103%</td><td><span class="badge track">On Track</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Case 3 -->
-            <div class="card" style="margin-bottom: 2rem;">
-                <span class="hero-tag">Case 03 &amp; 05</span>
-                <h3>Performance Analysis &amp; Project Controls</h3>
-                <div class="grid-2" style="margin-top: 1rem;">
-                    <div>
-                        <p><strong>Executive Readout:</strong></p>
-                        <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-muted); margin-top: 0.5rem;">
-                            <li>Volume improving; target gap remains</li>
-                            <li>Margin below plan requires cost review</li>
-                            <li>Cash conversion needs focused follow-up</li>
-                            <li>Separate actual from forward outlook</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p><strong>Project Alpha Controls:</strong></p>
-                        <p style="color: var(--text-muted); margin-top: 0.5rem;">Planned Progress: 76% | Actual Progress: 68% (8 pp behind plan) | Budget Used: 62% | Synthetic SPI: 0.89.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Case 4 -->
-            <div class="card">
-                <span class="hero-tag">Case 04</span>
-                <h3>Strategic PMO &amp; Action Governance</h3>
-                <p style="margin-bottom: 1.5rem;">Management review and action register linking issues to decisions, accountability, and verified evidence.</p>
-                <table>
-                    <thead>
-                        <tr><th>Priority Issue</th><th>Owner</th><th>Due</th><th>Status</th><th>Evidence / Next Step</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Billing documentation</td><td>Unit A</td><td>Week 2</td><td><span class="badge watch">Watch</span></td><td>Signed handover evidence</td></tr>
-                        <tr><td>Project milestone</td><td>Unit B</td><td>Week 3</td><td><span class="badge track">On Track</span></td><td>Progress certification</td></tr>
-                        <tr><td>Cash collection</td><td>Unit C</td><td>Week 4</td><td><span class="badge action">At Risk</span></td><td>Collection plan + proof</td></tr>
-                        <tr><td>Systems readiness</td><td>Unit D</td><td>Week 3</td><td><span class="badge done">Done</span></td><td>Acceptance confirmation</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- 05 METHODS & VALUE -->
-        <section id="methods">
-            <div class="section-header">
-                <span class="section-number">05</span>
-                <h2>Tools &amp; Value Proposition</h2>
-            </div>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Analytical Toolkit</h3>
-                    <p style="color: var(--text-muted); margin-top: 0.5rem;">Proficient across Microsoft Excel, PowerPoint, SAP FICO, BPC, and XBRL disclosure workflows, maintaining evidence-based analysis and transparent assumptions.</p>
-                </div>
-                <div class="card">
-                    <h3>Core Value</h3>
-                    <p style="color: var(--text-muted); margin-top: 0.5rem;"><strong>Structure:</strong> Turn complex inputs into a coherent control framework.<br><strong>Insight:</strong> Identify material gaps and separate evidence from assumption.<br><strong>Execution:</strong> Translate review findings into owned action plans.</p>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <h2>Let's turn performance data into better decisions.</h2>
-        <p>Audra Nesia Pratidina | Corporate Planning | Business Performance | Strategic PMO</p>
-        <p style="font-size: 0.85rem; margin-top: 1rem; color: #64748b;">All analytical values and example scenarios are synthetic. Confidential employer information has been excluded.</p>
-    </footer>
-
-</body>
-</html>
+                <div class="card orange"><h3>06. FOLLOW UP</h3><p>Action items &amp; owner accountability</p>
