@@ -1,854 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audra Nesia Pratidina — Corporate Strategy & Performance Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg-main: #0B0F19;
-    --bg-card: #151D2A;
-    --bg-card-hover: #1E293B;
-    --accent-blue: #2563EB;
-    --accent-cyan: #06B6D4;
-    --accent-teal: #10B981;
-    --accent-amber: #F59E0B;
-    --accent-rose: #EF4444;
-    --text-primary: #F8FAFC;
-    --text-secondary: #94A3B8;
-    --border-color: #243044;
-    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audra Nesia Pratidina | Corporate Planning & Performance Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0b131e;
+            --bg-secondary: #121d2f;
+            --bg-card: #18263c;
+            --accent-teal: #00b4d8;
+            --accent-orange: #f4a261;
+            --text-main: #f8f9fa;
+            --text-muted: #94a3b8;
+            --border-color: #233554;
+        }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-  /* Header Navbar */
-  header {
-    background: rgba(11, 15, 25, 0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
-    padding: 14px 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+        .hero-tag {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
 
-  .brand-logo {
-    width: 38px;
-    height: 38px;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    color: white;
-    font-size: 14px;
-  }
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
 
-  .brand-title { font-size: 15px; font-weight: 700; letter-spacing: 0.3px; }
-  .brand-subtitle { font-size: 11px; color: var(--text-secondary); }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
 
-  nav.slide-tabs {
-    display: flex;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 4px;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-    overflow-x: auto;
-  }
+        .hero-meta {
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
 
-  .tab-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    padding: 6px 14px;
-    border-radius: 7px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-  }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
 
-  .tab-btn.active {
-    background: var(--accent-blue);
-    color: white;
-  }
+        section {
+            border-top: 1px solid var(--border-color);
+            padding: 6rem 0;
+        }
 
-  /* Container Deck */
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
-  }
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
 
-  .deck-container {
-    width: 100%;
-    max-width: 1160px;
-    min-height: 620px;
-    background-color: #0E1422;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 36px 44px;
-  }
+        .section-number {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            letter-spacing: 1px;
+        }
 
-  .slide {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    min-height: 520px;
-    animation: fadeIn 0.35s ease-out;
-  }
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
 
-  .slide.active { display: flex; }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
 
-  /* Slide Top Bar */
-  .slide-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 16px;
-    margin-bottom: 24px;
-  }
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
 
-  .slide-tag {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent-cyan);
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 4px;
-  }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-teal);
+        }
 
-  .slide-title { font-size: 22px; font-weight: 800; color: var(--text-primary); }
+        .card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--accent-teal);
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
 
-  .badge-nda {
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    color: var(--accent-teal);
-    font-size: 11px;
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 20px;
-  }
+        .card.orange::before {
+            background-color: var(--accent-orange);
+        }
 
-  .slide-body { flex: 1; display: flex; align-items: center; }
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
 
-  .slide-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--border-color);
-    padding-top: 16px;
-    margin-top: 24px;
-    font-size: 11px;
-    color: var(--text-secondary);
-  }
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
 
-  /* Profile Layout & Photo Frame */
-  .profile-grid {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 32px;
-    width: 100%;
-    align-items: center;
-  }
+        /* Tables & Data Lists */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
 
-  .profile-photo-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 24px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+        th, td {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
 
-  .photo-frame {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 3px solid var(--accent-blue);
-    padding: 3px;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-    margin-bottom: 14px;
-    overflow: hidden;
-  }
+        th {
+            background-color: rgba(0, 180, 216, 0.1);
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
 
-  .photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
+        tr:last-child td {
+            border-bottom: none;
+        }
 
-  .photo-upload-btn {
-    font-size: 11px;
-    color: var(--accent-cyan);
-    background: rgba(6, 182, 212, 0.1);
-    border: 1px dashed rgba(6, 182, 212, 0.4);
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
 
-  /* Cards & Grid System */
-  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; width: 100%; }
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; width: 100%; }
-  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; width: 100%; }
+        .badge.watch { background-color: rgba(244, 162, 97, 0.2); color: var(--accent-orange); }
+        .badge.action { background-color: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .badge.track { background-color: rgba(0, 180, 216, 0.2); color: var(--accent-teal); }
+        .badge.done { background-color: rgba(34, 197, 94, 0.2); color: #22c55e; }
 
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 20px;
-  }
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
 
-  .card-val { font-size: 26px; font-weight: 800; color: var(--text-primary); margin: 6px 0; }
-  .card-label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; }
+        .stat-box {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
 
-  /* Custom Clean Table */
-  table.custom-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    background: var(--bg-card);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-  }
+        .stat-box .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            margin-bottom: 0.25rem;
+        }
 
-  table.custom-table th {
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--accent-cyan);
-    font-weight: 700;
-    text-align: left;
-    padding: 12px 18px;
-    border-bottom: 1px solid var(--border-color);
-  }
+        .stat-box .label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-  table.custom-table td {
-    padding: 12px 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    color: #E2E8F0;
-  }
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
 
-  .badge-status { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; }
-  .bg-green { background: rgba(16, 185, 129, 0.15); color: var(--accent-teal); }
-  .bg-amber { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
-  .bg-red { background: rgba(239, 68, 68, 0.15); color: var(--accent-rose); }
-
-  /* Controls Bar */
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 32px;
-    background: rgba(11, 15, 25, 0.95);
-    border-top: 1px solid var(--border-color);
-  }
-
-  .nav-btn {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 9px 20px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  .slide-counter { font-size: 13px; font-weight: 700; color: var(--accent-cyan); }
-</style>
+        footer h2 {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header & Navigation -->
-  <header>
-    <div class="brand">
-      <div class="brand-logo">ANP</div>
-      <div>
-        <div class="brand-title">AUDRA NESIA PRATIDINA</div>
-        <div class="brand-subtitle">Corporate Strategy • Business Performance • Investor Relations</div>
-      </div>
-    </div>
-    <nav class="slide-tabs" id="tabNav">
-      <button class="tab-btn active" onclick="goToSlide(0)">01 Profile</button>
-      <button class="tab-btn" onclick="goToSlide(1)">02 Journey</button>
-      <button class="tab-btn" onclick="goToSlide(2)">03 Framework</button>
-      <button class="tab-btn" onclick="goToSlide(3)">04 RKAP Plan</button>
-      <button class="tab-btn" onclick="goToSlide(4)">05 Scorecard</button>
-      <button class="tab-btn" onclick="goToSlide(5)">06 Readout</button>
-      <button class="tab-btn" onclick="goToSlide(6)">07 Action Log</button>
-      <button class="tab-btn" onclick="goToSlide(7)">08 EVM Control</button>
-      <button class="tab-btn" onclick="goToSlide(8)">09 Deliverables</button>
-    </nav>
-  </header>
+    <!-- HERO SECTION -->
+    <header>
+        <div class="hero-tag">Selected Works / 2015–2026</div>
+        <h1>Corporate Planning &amp; Performance Portfolio</h1>
+        <p class="hero-subtitle">Strategic PMO | Management Reporting | Regulatory Disclosure</p>
+        <div class="hero-meta">AUDRA NESIA PRATIDINA</div>
+    </header>
 
-  <!-- Main Presentation Deck -->
-  <main>
-    <div class="deck-container">
+    <div class="container">
 
-      <!-- SLIDE 1: PROFILE (Matching PDF Slide 2) -->
-      <div class="slide active">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">01 • Profile & Positioning</span>
-            <div class="slide-title">Bridging Operations, Corporate Planning & Executive Decisions</div>
-          </div>
-          <span class="badge-nda">Reconstructed Examples • Synthetic Data</span>
-        </div>
-        <div class="slide-body">
-          <div class="profile-grid">
-            <div class="profile-photo-card">
-              <div class="photo-frame">
-                <img id="profileImg" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Audra Nesia Pratidina">
-              </div>
-              <h3 style="font-size:15px; font-weight:700;">Audra Nesia P.</h3>
-              <p style="font-size:11px; color:var(--text-secondary); margin-top:2px;">Corporate Planning & IR Specialist</p>
-              <label class="photo-upload-btn">
-                📷 Upload Photo
-                <input type="file" id="imageInput" accept="image/*" style="display:none;" onchange="loadPhoto(event)">
-              </label>
+        <!-- 01 PROFILE -->
+        <section id="profile">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2>Profile &amp; Positioning</h2>
             </div>
-            <div>
-              <div class="grid-4" style="margin-bottom: 18px;">
+            <p style="font-size: 1.25rem; color: var(--text-main); margin-bottom: 2rem;">Bridging operations, corporate planning &amp; executive decisions. A cross-functional background spanning project controls, performance governance and reporting.</p>
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="number">10+ yrs</div>
+                    <div class="label">Experience</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">13 units</div>
+                    <div class="label">Corporate KPI Coordination</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">4 layers</div>
+                    <div class="label">Project Enterprise Scope</div>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 2rem;">
+                <h3>My Positioning</h3>
+                <p>From operational data and budget assumptions to management-ready performance insights, issue escalation and execution follow-through.</p>
+            </div>
+        </section>
+
+        <!-- 02 JOURNEY -->
+        <section id="journey">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2>Career Journey</h2>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Career progression: operational depth to enterprise visibility. Each transition extended the scope of planning, control, analysis and stakeholder communication.</p>
+            <div class="grid-3">
                 <div class="card">
-                  <span class="card-label">Experience</span>
-                  <div class="card-val">10+ Yrs</div>
-                  <span style="font-size:10px; color:var(--text-secondary);">Construction & Property</span>
+                    <h3>2015–18</h3>
+                    <p style="color: var(--accent-teal); font-weight: 600; margin-bottom: 0.5rem;">Commercial &amp; Project Admin</p>
+                    <p>Contracts documentation and baseline commercial support.</p>
                 </div>
                 <div class="card">
-                  <span class="card-label">Scope</span>
-                  <div class="card-val">13 Units</div>
-                  <span style="font-size:10px; color:var(--text-secondary);">KPI Coordination</span>
+                    <h3>2018–20</h3>
+                    <p style="color: var(--accent-teal); font-weight: 600; margin-bottom: 0.5rem;">Project Planning &amp; Control</p>
+                    <p>Progress cost schedule tracking and operational milestone management.</p>
                 </div>
                 <div class="card">
-                  <span class="card-label">Domains</span>
-                  <div class="card-val">4 Layers</div>
-                  <span style="font-size:10px; color:var(--text-secondary);">Project → Enterprise</span>
+                    <h3>2020–25</h3>
+                    <p style="color: var(--accent-teal); font-weight: 600; margin-bottom: 0.5rem;">Strategic Control / Planning</p>
+                    <p>RKAP preparation, cross-unit KPI reviews and strategic variance tracking.</p>
                 </div>
                 <div class="card">
-                  <span class="card-label">Work Style</span>
-                  <div class="card-val">Action-Led</div>
-                  <span style="font-size:10px; color:var(--text-secondary);">Structured Support</span>
+                    <h3>2026</h3>
+                    <p style="color: var(--accent-teal); font-weight: 600; margin-bottom: 0.5rem;">Investor Relations</p>
+                    <p>Disclosures, investor decks and governance communications.</p>
                 </div>
-              </div>
-              <div class="card" style="background: rgba(37, 99, 235, 0.08); border-color: rgba(37, 99, 235, 0.25);">
-                <h4 style="color:var(--accent-cyan); font-size:13px; margin-bottom:6px;">Executive Positioning Narrative</h4>
-                <p style="font-size:12px; line-height:1.6; color:#CBD5E1;">
-                  From operational data and budget assumptions to management-ready performance insights, issue escalation, and execution follow-through across corporate planning, KPI governance, and capital market disclosures (OJK, IDX, XBRL, ARA 2025 finalist).
-                </p>
-              </div>
             </div>
-          </div>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
-          <span>1 / 9</span>
-        </div>
-      </div>
+        </section>
 
-      <!-- SLIDE 2: JOURNEY (Matching PDF Slide 3) -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">02 • Career Journey</span>
-            <div class="slide-title">Operational Depth to Enterprise Visibility</div>
-          </div>
-          <span class="badge-nda">Synthetic Data</span>
-        </div>
-        <div class="slide-body">
-          <div class="grid-4">
-            <div class="card">
-              <span class="card-label">2015 – 2018</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">Commercial & Admin</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Property Division</p>
-              <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
-                <li>Contract & project administration</li>
-                <li>Commercial documentation</li>
-              </ul>
+        <!-- 03 FRAMEWORK -->
+        <section id="framework">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2>Integrated Business Framework</h2>
             </div>
-            <div class="card">
-              <span class="card-label">2018 – 2020</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">Project Controls</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Modular & Concession</p>
-              <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
-                <li>Schedule, cost & progress monitoring</li>
-                <li>Earned Value Analysis (EVM)</li>
-              </ul>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">A repeatable logic for aligning target setting, analysis, decisions, and execution.</p>
+            <div class="grid-3">
+                <div class="card"><h3>01. PLAN</h3><p>Budget / RKAP formulation</p></div>
+                <div class="card"><h3>02. CASCADE</h3><p>Targets &amp; KPI deployment</p></div>
+                <div class="card"><h3>03. MONITOR</h3><p>Actual vs plan tracking</p></div>
+                <div class="card"><h3>04. DIAGNOSE</h3><p>Variance / risk assessment</p></div>
+                <div class="card"><h3>05. DECIDE</h3><p>Management review &amp; value</p></div>
+                <div class="card orange"><h3>06. FOLLOW UP</h3><p>Action items &amp; owner accountability</p></div>
             </div>
-            <div class="card" style="border-color: var(--accent-blue);">
-              <span class="card-label">2020 – 2025</span>
-              <h4 style="color:var(--accent-teal); margin:6px 0; font-size:15px;">Strategic Control</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Risk & Strategic PMO</p>
-              <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
-                <li>RKAP & KPI review across 13 units</li>
-                <li>Performance BPC monitoring</li>
-              </ul>
-            </div>
-            <div class="card">
-              <span class="card-label">2026 – Present</span>
-              <h4 style="color:var(--accent-amber); margin:6px 0; font-size:15px;">Investor Relations</h4>
-              <p style="font-size:11px; color:var(--text-secondary);">Corporate Secretary</p>
-              <ul style="margin-top:12px; font-size:12px; color:#E2E8F0; padding-left:14px; line-height:1.5;">
-                <li>OJK & IDX XBRL disclosures</li>
-                <li>Investor decks & Annual Report packs</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
-          <span>2 / 9</span>
-        </div>
-      </div>
+        </section>
 
-      <!-- SLIDE 3: FRAMEWORK (Matching PDF Slide 4) -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">03 • Integrated Framework</span>
-            <div class="slide-title">Integrated Business Performance Management Cycle</div>
-          </div>
-          <span class="badge-nda">Repeatable Logic Standard</span>
-        </div>
-        <div class="slide-body">
-          <div class="grid-3">
-            <div class="card">
-              <span class="card-label">01 • PLAN</span>
-              <h4 style="color:var(--accent-cyan); margin-top:4px;">Budget / RKAP</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Budget build scenarios, macro assumptions, and sensitivity reviews.</p>
+        <!-- 04 CASES -->
+        <section id="cases">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2>Core Cases &amp; Deliverables</h2>
             </div>
-            <div class="card">
-              <span class="card-label">02 • CASCADE</span>
-              <h4 style="color:var(--accent-cyan); margin-top:4px;">Targets & KPI</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Cascading RKAP targets across 13 divisions with clear accountabilities.</p>
+            
+            <!-- Case 1 -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <span class="hero-tag">Case 01</span>
+                <h3>Annual Business Planning &amp; Scenario Analysis (RKAP)</h3>
+                <p style="margin-bottom: 1.5rem;">Coordinating submissions, challenging assumptions, consolidating scenarios, and preparing management-ready planning packs across 13 cross-unit inputs.</p>
+                <table>
+                    <thead>
+                        <tr><th>Scenario</th><th>Revenue Index</th><th>Cost Index</th><th>EBIT Index</th><th>Key Sensitivity</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Downside</td><td>86</td><td>91</td><td>-5</td><td>Delayed project starts</td></tr>
+                        <tr><td>Base Case</td><td>100</td><td>93</td><td>7</td><td>Baseline execution</td></tr>
+                        <tr><td>Upside Case</td><td>112</td><td>101</td><td>11</td><td>Faster conversion</td></tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="card">
-              <span class="card-label">03 • MONITOR</span>
-              <h4 style="color:var(--accent-cyan); margin-top:4px;">Actual vs Plan</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Monthly actuals tracking via BPC & SAP FICO systems.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">04 • DIAGNOSE</span>
-              <h4 style="color:var(--accent-teal); margin-top:4px;">Variance / Risk</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Identifying deviations, Cost-to-Complete (CTC) audits, and critical risk flags.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">05 • DECIDE</span>
-              <h4 style="color:var(--accent-amber); margin-top:4px;">Management Value</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Preparing executive decision packs for BOD & BOC forums.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">06 • FOLLOW UP</span>
-              <h4 style="color:var(--accent-rose); margin-top:4px;">Action / Owner</h4>
-              <p style="font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Items closed strictly based on verifiable evidence (BA/Invoice).</p>
-            </div>
-          </div>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
-          <span>3 / 9</span>
-        </div>
-      </div>
 
-      <!-- SLIDE 4: RKAP PLAN (Matching PDF Slide 5) -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">04 • Case 01: Corporate Planning</span>
-            <div class="slide-title">Annual Business Planning & Scenario Analysis</div>
-          </div>
-          <span class="badge-nda">13 Cross-Unit Inputs</span>
-        </div>
-        <div class="slide-body">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>Scenario</th>
-                <th>Revenue Index</th>
-                <th>Cost Index</th>
-                <th>EBIT Index</th>
-                <th>Key Sensitivity Factor</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><b style="color:var(--accent-rose);">Downside Case</b></td>
-                <td>86</td>
-                <td>91</td>
-                <td>-5</td>
-                <td>Delayed project starts & procurement lead times</td>
-              </tr>
-              <tr>
-                <td><b style="color:var(--accent-cyan);">Base Case</b></td>
-                <td>100</td>
-                <td>93</td>
-                <td>7</td>
-                <td>Baseline execution matching RKAP target</td>
-              </tr>
-              <tr>
-                <td><b style="color:var(--accent-teal);">Upside Case</b></td>
-                <td>112</td>
-                <td>101</td>
-                <td>11</td>
-                <td>Faster conversion of new contract wins</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
-          <span>4 / 9</span>
-        </div>
-      </div>
+            <!-- Case 2 -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <span class="hero-tag">Case 02</span>
+                <h3>Performance Governance &amp; Scorecard Architecture</h3>
+                <p style="margin-bottom: 1.5rem;">Target definition, owner assignment, periodic review, and corrective action workflows across 42 demo indicators.</p>
+                <table>
+                    <thead>
+                        <tr><th>KPI / Dimension</th><th>Target</th><th>Actual</th><th>Attainment</th><th>Flag</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Revenue index</td><td>100</td><td>94</td><td>94%</td><td><span class="badge watch">Watch</span></td></tr>
+                        <tr><td>New contract index</td><td>100</td><td>81</td><td>81%</td><td><span class="badge action">Action</span></td></tr>
+                        <tr><td>Cash conversion</td><td>90%</td><td>87%</td><td>97%</td><td><span class="badge watch">Watch</span></td></tr>
+                        <tr><td>Project milestones</td><td>95%</td><td>98%</td><td>103%</td><td><span class="badge track">On Track</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
 
-      <!-- SLIDE 5: SCORECARD (Matching PDF Slide 6) -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">05 • Case 02: Performance Governance</span>
-            <div class="slide-title">KPI Architecture & Cross-Unit Scorecard</div>
-          </div>
-          <span class="badge-nda">42 Tracked Indicators</span>
-        </div>
-        <div class="slide-body">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>KPI / Dimension</th>
-                <th>Target</th>
-                <th>Actual</th>
-                <th>Attainment</th>
-                <th>Flag</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Revenue Index</td>
-                <td>100</td>
-                <td>94</td>
-                <td>94%</td>
-                <td><span class="badge-status bg-amber">WATCH</span></td>
-              </tr>
-              <tr>
-                <td>New Contract Index</td>
-                <td>100</td>
-                <td>81</td>
-                <td>81%</td>
-                <td><span class="badge-status bg-red">ACTION</span></td>
-              </tr>
-              <tr>
-                <td>Cash Conversion Ratio</td>
-                <td>90%</td>
-                <td>87%</td>
-                <td>97%</td>
-                <td><span class="badge-status bg-amber">WATCH</span></td>
-              </tr>
-              <tr>
-                <td>Project Milestones</td>
-                <td>95%</td>
-                <td>98%</td>
-                <td>103%</td>
-                <td><span class="badge-status bg-green">ON TRACK</span></td>
-              </tr>
-              <tr>
-                <td>Reporting Timeliness</td>
-                <td>95%</td>
-                <td>99%</td>
-                <td>104%</td>
-                <td><span class="badge-status bg-green">ON TRACK</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
-          <span>5 / 9</span>
-        </div>
-      </div>
+            <!-- Case 3 -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <span class="hero-tag">Case 03 &amp; 05</span>
+                <h3>Performance Analysis &amp; Project Controls</h3>
+                <div class="grid-2" style="margin-top: 1rem;">
+                    <div>
+                        <p><strong>Executive Readout:</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-muted); margin-top: 0.5rem;">
+                            <li>Volume improving; target gap remains</li>
+                            <li>Margin below plan requires cost review</li>
+                            <li>Cash conversion needs focused follow-up</li>
+                            <li>Separate actual from forward outlook</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p><strong>Project Alpha Controls:</strong></p>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">Planned Progress: 76% | Actual Progress: 68% (8 pp behind plan) | Budget Used: 62% | Synthetic SPI: 0.89.</p>
+                    </div>
+                </div>
+            </div>
 
-      <!-- SLIDE 6: READOUT (Matching PDF Slide 7) -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">06 • Case 03: Performance Analysis</span>
-            <div class="slide-title">From Raw Monthly Results to Executive Insight</div>
-          </div>
-          <span class="badge-nda">Monthly Review Summary</span>
-        </div>
-        <div class="slide-body">
-          <div class="grid-4" style="width:100%;">
+            <!-- Case 4 -->
             <div class="card">
-              <span class="card-label">Revenue Index</span>
-              <div class="card-val" style="color:var(--accent-amber);">94</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Target = 100</span>
+                <span class="hero-tag">Case 04</span>
+                <h3>Strategic PMO &amp; Action Governance</h3>
+                <p style="margin-bottom: 1.5rem;">Management review and action register linking issues to decisions, accountability, and verified evidence.</p>
+                <table>
+                    <thead>
+                        <tr><th>Priority Issue</th><th>Owner</th><th>Due</th><th>Status</th><th>Evidence / Next Step</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Billing documentation</td><td>Unit A</td><td>Week 2</td><td><span class="badge watch">Watch</span></td><td>Signed handover evidence</td></tr>
+                        <tr><td>Project milestone</td><td>Unit B</td><td>Week 3</td><td><span class="badge track">On Track</span></td><td>Progress certification</td></tr>
+                        <tr><td>Cash collection</td><td>Unit C</td><td>Week 4</td><td><span class="badge action">At Risk</span></td><td>Collection plan + proof</td></tr>
+                        <tr><td>Systems readiness</td><td>Unit D</td><td>Week 3</td><td><span class="badge done">Done</span></td><td>Acceptance confirmation</td></tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="card">
-              <span class="card-label">Gross Margin</span>
-              <div class="card-val" style="color:var(--accent-rose);">8.2%</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Plan = 10.0%</span>
-            </div>
-            <div class="card">
-              <span class="card-label">Cash Conversion</span>
-              <div class="card-val" style="color:var(--accent-teal);">87%</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Plan = 90%</span>
-            </div>
-            <div class="card">
-              <span class="card-label">Initiative Status</span>
-              <div class="card-val" style="color:var(--accent-cyan);">73%</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Completed on schedule</span>
-            </div>
-          </div>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
-          <span>6 / 9</span>
-        </div>
-      </div>
+        </section>
 
-      <!-- SLIDE 7: ACTION LOG (Matching PDF Slide 8) -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">07 • Case 04: Strategic PMO</span>
-            <div class="slide-title">Management Review & Action Governance</div>
-          </div>
-          <span class="badge-nda">24 Initiatives Monitored</span>
-        </div>
-        <div class="slide-body">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>Priority Issue</th>
-                <th>Owner</th>
-                <th>Due</th>
-                <th>Status</th>
-                <th>Evidence / Next Step</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Billing Documentation</td>
-                <td>Unit A</td>
-                <td>Week 2</td>
-                <td><span class="badge-status bg-amber">WATCH</span></td>
-                <td>Signed handover evidence</td>
-              </tr>
-              <tr>
-                <td>Project Milestone</td>
-                <td>Unit B</td>
-                <td>Week 3</td>
-                <td><span class="badge-status bg-green">ON TRACK</span></td>
-                <td>Progress certification</td>
-              </tr>
-              <tr>
-                <td>Cash Collection</td>
-                <td>Unit C</td>
-                <td>Week 4</td>
-                <td><span class="badge-status bg-red">AT RISK</span></td>
-                <td>Collection plan + payment proof</td>
-              </tr>
-              <tr>
-                <td>Systems Readiness</td>
-                <td>Unit D</td>
-                <td>Week 3</td>
-                <td><span class="badge-status bg-green">DONE</span></td>
-                <td>Acceptance confirmation</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
-          <span>7 / 9</span>
-        </div>
-      </div>
-
-      <!-- SLIDE 8: EVM PROJECT CONTROLS (Matching PDF Slide 9) -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">08 • Case 05: Project Controls</span>
-            <div class="slide-title">Project Progress, Budget & Variance Monitoring</div>
-          </div>
-          <span class="badge-nda">Project Alpha Checkpoint</span>
-        </div>
-        <div class="slide-body">
-          <div class="grid-4" style="width:100%;">
-            <div class="card">
-              <span class="card-label">Planned Progress</span>
-              <div class="card-val" style="color:var(--accent-cyan);">76%</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Current Checkpoint</span>
+        <!-- 05 METHODS & VALUE -->
+        <section id="methods">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2>Tools &amp; Value Proposition</h2>
             </div>
-            <div class="card">
-              <span class="card-label">Actual Progress</span>
-              <div class="card-val" style="color:var(--accent-amber);">68%</div>
-              <span style="font-size:11px; color:var(--accent-rose);">8 pp behind plan</span>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Analytical Toolkit</h3>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">Proficient across Microsoft Excel, PowerPoint, SAP FICO, BPC, and XBRL disclosure workflows, maintaining evidence-based analysis and transparent assumptions.</p>
+                </div>
+                <div class="card">
+                    <h3>Core Value</h3>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;"><strong>Structure:</strong> Turn complex inputs into a coherent control framework.<br><strong>Insight:</strong> Identify material gaps and separate evidence from assumption.<br><strong>Execution:</strong> Translate review findings into owned action plans.</p>
+                </div>
             </div>
-            <div class="card">
-              <span class="card-label">Budget Used</span>
-              <div class="card-val" style="color:var(--accent-teal);">62%</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Cost Utilization</span>
-            </div>
-            <div class="card">
-              <span class="card-label">Earned Value (SPI)</span>
-              <div class="card-val" style="color:var(--accent-amber);">0.89</div>
-              <span style="font-size:11px; color:var(--text-secondary);">Synthetic SPI</span>
-            </div>
-          </div>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
-          <span>8 / 9</span>
-        </div>
-      </div>
-
-      <!-- SLIDE 9: DELIVERABLES (Matching PDF Slide 13) -->
-      <div class="slide">
-        <div class="slide-header">
-          <div>
-            <span class="slide-tag">09 • Representative Deliverables</span>
-            <div class="slide-title">Representative Dashboards & Analytical Artifacts</div>
-          </div>
-          <span class="badge-nda">Original Mockups</span>
-        </div>
-        <div class="slide-body">
-          <div class="grid-3">
-            <div class="card">
-              <span class="card-label">01 • Planning</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">RKAP Scenario Model</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Target and sensitivity simulation model.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">02 • Governance</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">KPI Performance Scorecard</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Target vs actual RAG tracking across 13 units.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">03 • Executive</span>
-              <h4 style="color:var(--accent-teal); margin:6px 0; font-size:15px;">Executive Board Dashboard</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Financial & operational KPI board decks.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">04 • PMO</span>
-              <h4 style="color:var(--accent-amber); margin:6px 0; font-size:15px;">Management Action Tracker</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Owner, due date, and evidence validation log.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">05 • Project</span>
-              <h4 style="color:var(--accent-cyan); margin:6px 0; font-size:15px;">Project Control Sheet</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">Schedule, cost gaps, and EVM tracking.</p>
-            </div>
-            <div class="card">
-              <span class="card-label">06 • Disclosure</span>
-              <h4 style="color:var(--accent-rose); margin:6px 0; font-size:15px;">Disclosure Validation Log</h4>
-              <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">OJK & IDX XBRL mapping and reconciliation.</p>
-            </div>
-          </div>
-        </div>
-        <div class="slide-footer">
-          <span>AUDRA NESIA PRATIDINA — SELECTED WORKS</span>
-          <span>9 / 9</span>
-        </div>
-      </div>
+        </section>
 
     </div>
-  </main>
 
-  <!-- Controls Bar -->
-  <div class="controls">
-    <button class="nav-btn" onclick="prevSlide()">← Previous Slide</button>
-    <div class="slide-counter" id="slideNum">Slide 1 of 9</div>
-    <button class="nav-btn" onclick="nextSlide()">Next Slide →</button>
-  </div>
+    <!-- FOOTER -->
+    <footer>
+        <h2>Let's turn performance data into better decisions.</h2>
+        <p>Audra Nesia Pratidina | Corporate Planning | Business Performance | Strategic PMO</p>
+        <p style="font-size: 0.85rem; margin-top: 1rem; color: #64748b;">All analytical values and example scenarios are synthetic. Confidential employer information has been excluded.</p>
+    </footer>
 
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const tabs = document.querySelectorAll('.tab-btn');
-    const slideNum = document.getElementById('slideNum');
-
-    function updateDeck() {
-      slides.forEach((slide, idx) => {
-        slide.classList.toggle('active', idx === currentSlide);
-      });
-      tabs.forEach((tab, idx) => {
-        tab.classList.toggle('active', idx === currentSlide);
-      });
-      slideNum.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
-    }
-
-    function goToSlide(index) {
-      currentSlide = index;
-      updateDeck();
-    }
-
-    function nextSlide() {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        updateDeck();
-      }
-    }
-
-    function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateDeck();
-      }
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
-    });
-
-    function loadPhoto(event) {
-      const output = document.getElementById('profileImg');
-      output.src = URL.createObjectURL(event.target.files[0]);
-      output.onload = function() {
-        URL.revokeObjectURL(output.src);
-      }
-    }
-  </script>
 </body>
 </html>
